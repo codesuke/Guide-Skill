@@ -1,0 +1,15 @@
+# Machine-specific, auto-generated at runtime by scan-skills.sh — never publish
+skills/design-engineer/memory/skill-registry.md
+
+# Lockfiles from the `skills` CLI (project-scoped installs); not part of this collection
+skills-lock.json
+
+# OS / editor / WSL junk
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+*Zone.Identifier
+*.tmp
+*~
+.idea/
+.vscode/

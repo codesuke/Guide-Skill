@@ -124,6 +124,16 @@ Template (mirror `reference/accountable-wow.md`):
 Use `ab-testing` to design the experiment structure (variant split, success threshold, min sample size).
 Use `analytics` to specify the instrumentation plan (event schema, funnel steps, cohort definition).
 
+## What does NOT belong in growth.md
+
+Keep these out — they belong to other phases or are not grounded findings:
+
+- Visual or aesthetic direction (colour, type, layout, components) — that is `de-direction`.
+- Motion ideas, signature-moment design, scroll/hover interactions — that is `de-motion`.
+- Invented metrics, baselines, or competitor numbers presented as fact — flag as assumption or `[unknown — not in brief]` and assign a hypothesis instead.
+- More than one primary CTA — exactly one is locked; everything else is secondary.
+- Production code, final copy, or component markup.
+
 ## Output summary
 
 After writing, emit a brief inline summary: the ONE CTA locked, the top 3 friction fixes, and the

@@ -140,3 +140,43 @@ from the runners-up. State what was grafted and why it improves the winner witho
 The winner must nominate exactly one Signature moment per page — never two competing ones called a
 feature. Any striking visual treatment must carry an Accountable WOW conversion bet (see
 `reference/accountable-wow.md`); decorative direction without a conversion rationale is removed.
+
+---
+
+## Anti-patterns
+
+- **Three concepts that are the same layout in three colour palettes.** This is a fake tournament:
+  the caller gets no real strategic choice, the scoring is theatre, and the "winner" is arbitrary
+  (whichever palette you liked). Fix by varying emotional register, layout system, and type
+  personality — not the accent hue.
+- **Vibes without references.** A direction call with no fetched (or specific named) reference is
+  unfalsifiable: nobody can check it, so it drifts under the first downstream pushback and the spine
+  built on it has no anchor. Every stylistic claim must point at a real URL.
+- **Timid 16px-everything type scale.** A flat scale (everything between 14–18px) produces no
+  editorial hierarchy: the eye finds no entry point, the headline has no pull, and the page reads as
+  a generic AI template. Force genuine stops between display, h1, h2, body (see `spine.md` 5b).
+
+---
+
+## Good / bad
+
+**BAD — concepts differ only in accent colour:**
+```
+Concept 1: centred hero, 16px body, indigo CTA.   Ref: linear.app
+Concept 2: centred hero, 16px body, emerald CTA.  Ref: linear.app
+Concept 3: centred hero, 16px body, crimson CTA.  Ref: linear.app
+```
+Same layout, same type, same reference, same signature moment — one concept wearing three coats.
+The kill is meaningless because nothing real was eliminated.
+
+**GOOD — concepts differ in emotional register + layout system + type personality, each cited:**
+```
+Concept 1 (clean-trust): single-column, single-action above fold, soft palette, humanist sans,
+  generous whitespace.        Ref: stripe.com/payments — "calm hierarchy that de-risks the click".
+Concept 2 (editorial-bold): asymmetric magazine grid, 7vw kerned display headline, high type
+  contrast, restrained colour.  Ref: an Awwwards editorial site fetched this session.
+Concept 3 (cinematic-dark):  dark canvas, high-contrast light pulls, depth and one dramatic hero
+  moment.                       Ref: vercel.com — "dark surface that makes the accent detonate".
+```
+Each owns a distinct reason to exist grounded in evidence, so the scoring discriminates and the kill
+removes a real alternative.

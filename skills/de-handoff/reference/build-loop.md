@@ -151,6 +151,8 @@ Perf/a11y gates:
 
 ## Phase 5 — Iterate or accept
 
+**Never accept a section on code inspection alone.** Acceptance requires the `shot` screenshot captured in Phase 2, read into context, and run through the review and gate check. Code that "looks right" is not evidence.
+
 **If all gates pass:** Section is accepted. Note accepted status. Move to the next section.
 
 **If any gate fails:**
@@ -232,3 +234,15 @@ Unresolved failures (hit iteration limit): [list with section name + gate, or "n
 
 > This file was produced by `de-handoff --build`. The corresponding prompt source is `prompt-pack.md`.
 ```
+
+---
+
+## Anti-patterns
+
+Each ships a specific bad output. Avoid all of them.
+
+- **Accepting a section on code inspection without a `shot` screenshot.** The code reads clean, so you mark the section done. You ship visually broken sections — overlapping text, collapsed spacing, a motion that never fires, contrast that fails at a mid-animation frame — because none of that is visible in source. The screenshot is the only thing that proves what the user will actually see; without it the gate check is a guess.
+
+- **A prompt that says "use the tokens from `direction.md`."** The build agent is dispatched with only that pointer and no inline values. It does not read `direction.md`, so it invents its own hex codes, type scale, and spacing — producing an off-spine section that violates the locked Spine and forces a full rebuild. Self-contained prompts (actual values pasted inline) are the fix.
+
+- **Removing the signature moment to clear a gate.** A perf or CLS gate fails on the hero interaction, so the easy "fix" is to delete the motion. You clear the gate and ship a flat, generic page — the exact opposite of the doctrine, which mandates exactly one developed signature moment per page. Redesign it to clear the gate (defer it past LCP, swap to transform/opacity-only); never delete it.

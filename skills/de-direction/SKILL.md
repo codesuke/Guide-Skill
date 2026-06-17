@@ -13,12 +13,24 @@ description: Runs a 3-concept art-direction tournament and emits a design-system
 
 ## What this skill does
 
-Reads `recon.md` (from `de-recon`) and `growth.md` (from `de-growth`) and runs a structured
-art-direction tournament: fetch live references first, generate three genuinely distinct visual
-concepts, score them against the growth goal and the Doctrine, kill two, develop the winner. Then
-emits the **Spine** — color tokens, type scale, spacing rhythm, core components — that every
-subsequent page phase inherits. Output: `direction.md` with three sections — (A) Winning Direction,
-(B) Reference Board, (C) Token + Component Spine.
+Reads `recon.md` + `growth.md` and runs a structured art-direction tournament: fetch live
+references, generate three genuinely distinct concepts, score against the growth goal and the
+Doctrine, kill two, develop the winner. Emits the **Spine** (color tokens, type scale, spacing,
+components) every later phase inherits. Output: `direction.md` — (A) Winning Direction, (B)
+Reference Board, (C) Token + Component Spine.
+
+## The crux
+
+Run a real tournament: produce **three GENUINELY distinct concepts, each backed by a fetched real
+reference, scored — not vibed**. Make them differ in emotional register + layout system + type
+personality (not palette swaps) — a fake tournament gives a false choice and an arbitrary win.
+
+## Do not proceed
+
+Do not emit `direction.md` until: each of the 3 concepts cites a distinct fetched reference; the
+scoring arithmetic is visible; two concepts are killed with named reasons; and the winner's spine
+tokens (color, type scale, spacing, components) are fully specified. If any is missing, finish it
+first.
 
 ## Hard rules
 

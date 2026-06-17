@@ -74,3 +74,24 @@ The highest-scoring candidate wins. State:
 - The exact reduced-motion fallback — this is mandatory, not optional.
 
 If the winning candidate has a perf or a11y flag, redesign it here to resolve the flag before declaring it the winner. State what changed and why the redesigned version still earns its score.
+
+## Anti-patterns
+
+- **Everything animates.** Multiple effects compete for attention, so no single hero moment reads as the Signature moment, and the cumulative JS plus scroll-shift tanks the perf floors (animation JS over budget, CLS above 0). Bad output: a `motion.md` where five sections all carry strong motion, no scored winner, and the page fails LCP/CLS at handoff.
+- **A Signature moment with no reduced-motion fallback.** Fails the accessibility Hard floor; `de-handoff` cuts it because it cannot ship without a defined `prefers-reduced-motion` path. Bad output: a winner declared with an empty or "slower version" fallback, which is itself an animation and does not satisfy reduced-motion — so the hero is dropped at handoff and the page ships with no signature moment at all.
+- **Choosing the moment by taste instead of score.** The selection is unjustifiable and drifts run-to-run; reviewers cannot tell why this moment beat the runner-up. Bad output: a winner with no shortlist arithmetic, picked because it "looks best," which collapses under the first conversion or perf challenge because nothing defends it.
+
+## Good / bad
+
+**BAD** — four competing effects, no hero:
+```
+Hero parallax (depth layers) + animated counters in stats + scroll-jacked feature cards + marquee logo strip
+```
+Why bad: four strong effects fight for attention so the eye never settles on one moment; counters and scroll-jacking add JS over the 60 KB floor; the marquee and pinned cards risk CLS; no scored winner means nothing is defensible. This is the "everything animates" anti-pattern.
+
+**GOOD** — one scored hero, everything else quiet:
+```
+Signature moment: pinned scroll-scrub "Outcome Ladder" — the value prop builds rung by rung as the
+user scrolls, ending on the ONE CTA. All other sections: quiet CSS stagger-in (opacity + transform only).
+```
+Why good: one moment carries the narrative punch and lands on the conversion goal; it is chosen by score, not taste; every other section is intentionally subordinate CSS so the hero reads as the hero; transform/opacity-only keeps CLS at 0 and JS within budget; the scrub has a clean reduced-motion fallback (static final-state ladder, instant reveal).

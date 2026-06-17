@@ -40,7 +40,16 @@ install.sh           re-points the global symlinks at this copy (location-indepe
 
 ## When you change a skill
 
-- Re-run `bash docs/superpowers/validate-skill.sh <name>` (structure + discoverability).
-- Re-run `bash docs/superpowers/audit-gaps.sh` (the 8 operational-gap regression checks).
+- Run `bash docs/superpowers/check-collection.sh` — the one aggregate gate. It runs per-skill
+  validation (structure + description format), the 8 operational-gap regression checks, the
+  README+`plugin.json` registration invariant, SKILL.md size guidance, and link integrity.
 - If a structural decision changed, add an ADR under `docs/adr/`.
-- Keep `README.md` and `.claude-plugin/plugin.json` in sync with the skill set.
+- Keep `README.md` and `.claude-plugin/plugin.json` in sync with the skill set (the check enforces it).
+
+## Skill quality bar
+
+Every skill is held to the rubric distilled from mattpocock/skills. Each `SKILL.md` should:
+name **the crux** (the one highest-leverage move, with disproportionate effort directed there);
+carry explicit **"do not proceed until …" gates**; and link reference files that include **named
+anti-patterns with their failure mechanism**, **GOOD/BAD examples**, and a **"what does NOT belong"
+negative list** for the artifact it produces. Prose is imperative, second person, filler-free.

@@ -125,3 +125,27 @@ Produce `recon.md` in the working dir with exactly these section headers:
 ```
 
 **What to keep** is a short, opinionated list of content, copy, or structural elements worth preserving in the redesign. It is the bridge to `de-growth` and `de-direction`. Typical items: a strong testimonial, a clear pricing structure, a compelling case study, a trustworthy certification badge. Do not list anything about the current visual design — that is handled by direction later. Brand-visual assets with equity — logo, illustration style, a distinctive typeface — MAY be listed here even when the surrounding visual design is being discarded; separating brand equity from generic theme styling is the point.
+
+**What does NOT belong in recon.md:**
+
+- Solutions, redesign ideas, or "we should…" recommendations — that is `de-growth` and `de-direction`'s job. recon describes what *is*, not what *should be*.
+- Invented metrics (conversion rates, traffic, MRR) not present in the source.
+- Aesthetic opinions stated as fact ("the design is dated") — design audit findings must cite the observed pattern, not a verdict.
+- New conversion strategy, the ONE CTA, spine tokens, or signature-moment proposals — all downstream.
+
+---
+
+## Anti-patterns
+
+- **Filling thin sections with plausible inventions.** When the source is sparse, the temptation is to write a confident `Audience` or `Funnel` from imagination so the artifact "looks complete." Failure mechanism: `de-growth` and `de-direction` cannot tell invented facts from observed ones, so they optimize the funnel, the ONE CTA, and the spine for a *fictional* audience. The whole pipeline ships a polished site aimed at people who don't exist. Mark gaps `[unknown — not in brief]` instead — a flagged hole is honest; an invented fill is a silent lie.
+- **Auditing the brief's claims as if verified.** Treating "the leading platform for X" or "trusted by thousands" from a brief as established fact. Failure mechanism: marketing puffery propagates into recon as ground truth and downstream phases build trust signals on unverifiable claims. Attribute such claims to the source ("brief states…") and mark them `[inferred from brief]`; never restate them as observed reality.
+- **Smuggling redesign opinions into the audit.** Writing "needs a bolder hero" instead of "hero is a centred card stack with a purple-to-blue gradient." Failure mechanism: it pre-empts `de-direction`, and a recommendation phrased as an observation can't be re-evaluated against evidence later. Record the observed pattern; leave the fix to direction.
+
+## Good / bad
+
+A paired example for the `Audience` section, brief-only source:
+
+- **BAD:** `Audience: young urban professionals`
+  Why it's bad: invented and unsourced. Nothing in the brief said "young," "urban," or "professionals" — it reads as fact but is a guess. `de-growth` will now target ad copy, the ONE CTA, and trust signals at a demographic that may not be real, with no flag warning anyone the foundation is fabricated.
+- **GOOD:** `Audience: [inferred from brief] career-motivated graduates; income band [unknown — not in brief]`
+  Why it's good: every claim is either tied to brief language and flagged `[inferred from brief]`, or the gap is named explicitly with `[unknown — not in brief]`. Downstream phases know exactly what is solid and what needs validation.

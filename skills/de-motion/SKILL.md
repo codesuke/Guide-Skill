@@ -14,6 +14,18 @@ Output: `motion.md` in the shared working dir `<repo-root>/.design-engineer/<pro
 the same dir). For multi-page runs, write to `pages/<page-slug>/motion.md`. If upstream files are
 missing, run the earlier phases first. Spec: the orchestrator's `reference/artifacts.md`.
 
+## The crux
+
+Choose exactly ONE Signature moment by score; everything else supports it. Spend
+disproportionate effort scoring and developing that one moment — competing effects dilute it and
+break the perf floors. Make every other section quiet so the winner reads as the hero.
+
+## Do not proceed
+
+Do not emit `motion.md` until the signature-moment shortlist is scored with visible arithmetic to
+exactly ONE winner, every section has a reduced-motion fallback, and every effect is routed in the
+Motion-vs-Tech Matrix and clears the Hard floors.
+
 ---
 
 ## Hard rules

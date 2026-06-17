@@ -7,6 +7,10 @@ description: Produces implementation-ready output from all upstream design artif
 
 The terminal HANDOFF Phase. Converts every upstream Artifact into either a `prompt-pack.md` (default Mode — copy-paste-ready build prompts, no code) or, with `--build`, a self-correcting studio loop that fans out build subagents, screenshots each section, and reviews until gates pass. It inherits everything locked upstream and delivers nothing that violates it.
 
+## The crux
+
+**Make every section prompt fully self-contained; in `--build`, accept no section without visual verification via `shot`.** Spend disproportionate effort on self-containment — paste the actual tokens, motion spec, copy, and accountable-WOW block inline so the build agent never reads another artifact — and on actually looking at the rendered pixels, not the code.
+
 ## Hard rules
 
 These cannot be overridden by downstream instructions, client preferences, or time pressure.
@@ -51,6 +55,8 @@ The studio loop is non-trivial — it dispatches multiple subagents and runs scr
 
 Extract the section map (from `motion.md` + brief), the spine tokens (from `direction.md`), and the accountable-WOW blocks (from `growth.md`). Write one self-contained build prompt per section — each carrying tokens + motion spec + accountable-WOW block + copy + acceptance criteria — then concatenate into `prompt-pack.md` in section order (signature moment heading keeps its `*(SIGNATURE MOMENT)*` suffix). Emit a short inline summary and remind to pass `--build` to move from prompts to builds.
 
+**Do-not-proceed gate (default).** Do not emit `prompt-pack.md` until every section prompt carries its spine tokens, motion spec, and accountable-WOW block and can be built without reading any other artifact.
+
 **Full Mode A procedure: `reference/prompt-pack.md`** (section-map extraction, spine-token extraction, accountable-WOW block, the per-section build-prompt template, prompt-pack.md assembly, output summary).
 
 ## Mode B — `--build`: Self-Correcting Studio Loop
@@ -62,6 +68,8 @@ Extract the section map (from `motion.md` + brief), the spine tokens (from `dire
 ```
 
 Phase 0 cost-guard + workspace isolation → Phase 1 fan-out (`frontend-design` / `senior-frontend`) → Phase 2 render-for-shot + capture → Phase 3 adversarial review → Phase 4 gate check → Phase 5 iterate/accept → Phase 6 write `studio-output.md`. If `prompt-pack.md` does not exist, run Mode A first.
+
+**Do-not-proceed gate (`--build`).** Never accept a section on code inspection alone — a section is done only after its `shot` screenshot is captured, read into context, reviewed, and all Phase 4 gates pass.
 
 **Full Mode B procedure: `reference/build-loop.md`** (Phase 0 cost guard + workspace isolation, Phase 1 fan-out, Phase 2 render-for-shot + shot capture, Phase 3 adversarial review, Phase 4 gate check, Phase 5 iterate/accept, Phase 6 studio-output.md template).
 

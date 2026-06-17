@@ -5,6 +5,8 @@ description: Reverse-engineers any source — a live URL, a Figma link, or a wri
 
 # de-recon — Reverse-Engineer Any Source into recon.md
 
+**The crux:** always read the REAL target; never invent findings. A recon built on plausible-but-invented facts silently poisons every downstream phase — spend your effort grounding each claim in the actual source, not on prose polish.
+
 > **Artifact location.** Write `recon.md` to the shared working dir
 > `<repo-root>/.design-engineer/<project-slug>/` (repo root via `git rev-parse --show-toplevel`,
 > else CWD); create it if missing. Never write into CWD or the repo root. Spec: the orchestrator's
@@ -20,6 +22,8 @@ Given a live URL, a Figma link, or a written brief, this skill scrapes and reads
 - **Embedded analysis mode:** When the only source is a written brief (no live URL, no Figma link) and evidence skills cannot be dispatched, perform every analysis step INLINE using the same criteria — purpose, audience inference, funnel sketch, design signals, etc. — drawing solely from the brief text. Mark each such finding as `[inferred from brief]` rather than skipping the step. Do not fabricate facts not present in the brief; flag genuine gaps as `[unknown — not in brief]`.
 - Keep the content inventory strictly separate from the current design.
 - Do **not** write production code, make design/motion decisions (`de-direction`, `de-motion`), or define the new conversion strategy (`de-growth`).
+
+**Do-not-proceed gate:** Do not emit `recon.md` until every one of the 7 sections is either grounded in the real source or explicitly marked `[inferred from brief]` / `[unknown — not in brief]`. An unmarked claim with no source is a failure — mark it or cut it.
 
 ## Procedure overview
 

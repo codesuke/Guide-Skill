@@ -18,6 +18,17 @@ placement, an SEO hierarchy, and accountable hypotheses each carrying a measurab
 `growth.md` is the authority document for conversion intent — `de-direction` and `de-motion` must
 not override the ONE CTA or the funnel sequence without explicit sign-off.
 
+## The crux
+
+Lock the ONE CTA before anything else; every later phase serves it. Spend disproportionate effort
+getting the CTA and value prop right — a wrong CTA makes all downstream work optimize the wrong
+action.
+
+## Do-not-proceed gate
+
+Do not emit `growth.md` until exactly one primary CTA is named and every secondary action is
+demoted below it; and every friction point carries a `Fix:`.
+
 ## Hard rules
 
 - **Evidence-grounded:** every statement in `growth.md` must be grounded in evidence — from

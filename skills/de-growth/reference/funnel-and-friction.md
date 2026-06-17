@@ -71,3 +71,24 @@ Friction audit:
 ```
 
 The friction audit must not be empty. If recon found no friction, that is itself a suspect finding — note it and flag a hypothesis.
+
+## Anti-patterns
+
+**Multiple equal-weight CTAs.** When two or more calls-to-action share the same visual weight, you split the visitor's attention. No single action dominates the scan path, the eye has nowhere to land, the visitor defers the decision — and conversion drops. Merge, demote, or remove until exactly one CTA dominates.
+
+**Vague value prop that fails the one-sentence cold-reader test.** When a cold reader cannot say what the offer is and what they get from one sentence above the fold, they bounce before they understand it. Traffic is spent, nothing converts, and downstream phases polish a promise no one can parse. Rewrite the value prop until a stranger passes the test.
+
+## Good / bad
+
+**BAD** — a hero with three same-weight buttons:
+```
+[ Get Started ]   [ Learn More ]   [ Contact Sales ]
+```
+Three equal buttons, no hierarchy. The visitor must choose where to look first; the page has no opinion about what they should do; the scan path forks and conversion leaks.
+
+**GOOD** — one dominant CTA plus a subordinate text link:
+```
+[ Enroll Now ]
+  Not sure yet? See how it works →
+```
+One filled, high-contrast primary button owns the scan path. The secondary action survives as a low-weight text link for visitors who need more, without competing for the click.

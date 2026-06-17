@@ -20,7 +20,7 @@ It does NOT write production code by default — it produces understanding, deci
 - You already have recon.md and growth.md and want to run direction only
 - You are auditing or patching one phase of an existing plan
 
-### The 7 skills in the collection
+### The 6 skills in the collection
 
 | Skill | What it does | Output |
 |---|---|---|
@@ -30,7 +30,10 @@ It does NOT write production code by default — it produces understanding, deci
 | `de-direction` | 3-concept art-direction tournament + live reference board + design-system token spine | `direction.md` |
 | `de-motion` | Full motion architecture: per-section scroll plan, signature-moment scoring lab, motion-vs-tech matrix, a11y/perf floors | `motion.md` |
 | `de-handoff` | Synthesizes all artifacts into implementation-ready output | `prompt-pack.md` (default) or `studio-output.md` (`--build`) |
-| `impeccable` | Primary taste critic — called by direction and handoff to enforce the doctrine, catch generic AI patterns, audit hierarchy | (critic, not a pipeline phase) |
+
+> `impeccable` and `emil-design-eng` are **external critic skills** the director routes to (primary
+> and micro-polish critics) — they are not part of this collection. If absent, the pipeline degrades
+> gracefully and audits against the same doctrine checklist manually.
 
 ---
 
@@ -325,11 +328,30 @@ These are enforced at every phase. Knowing them helps you write better prompts.
 
 | Rule | Where enforced |
 |---|---|
-| **Exactly ONE signature moment per page** | `de-motion` lab, `de-handoff` gate check |
-| **References before vibes** — no direction without a fetched URL | `de-direction` §1 |
-| **Reject the generic AI look** — centred card stack, purple-to-blue gradient hero, emoji bullets, glowing CTA, stock mascots | `de-direction` + `impeccable` |
-| **ONE primary CTA** — multiple equal-weight CTAs are a conversion killer | `de-growth` §2, frozen for all downstream phases |
+| **Exactly ONE signature moment per page** | `de-motion` signature-moment lab, `de-handoff` gate check |
+| **References before vibes** — no direction without a fetched URL | `de-direction` (`reference/tournament.md`) |
+| **Reject the generic AI look** — centred card stack, purple-to-blue gradient hero, emoji bullets, glowing CTA, stock mascots | `de-direction` + the `impeccable` critic |
+| **ONE primary CTA** — multiple equal-weight CTAs are a conversion killer | `de-growth` (locked, frozen for all downstream phases) |
 | **Perf/a11y are hard floors** — LCP < 2.5s, CLS = 0, reduced-motion fallback required | All phases |
 | **Conversion goal wins ties** — aesthetics yield to the growth goal; the signature moment is redesigned, not deleted | Tension-resolution rule in doctrine |
 
 Full doctrine: `reference/doctrine.md`
+
+---
+
+## Advanced capabilities
+
+These are baked into the director and the phase skills; you rarely invoke them explicitly.
+
+| Capability | What it does | Where |
+|---|---|---|
+| **Shared working dir** | All artifacts live in `<repo-root>/.design-engineer/<project-slug>/` — phases read upstream files from and write outputs there, never CWD or repo root | `reference/artifacts.md` |
+| **Resume detection** | On start, scans the working dir for existing artifacts and offers to resume from the first incomplete phase instead of re-running | director SKILL.md |
+| **Multi-page** | recon/growth/direction run once for the site; motion + handoff loop per page under `pages/<page-slug>/`; each page keeps exactly ONE signature moment | director SKILL.md |
+| **Project-scoped taste** | A per-project `<working-dir>/taste.md` overrides the global taste ledger, so taste doesn't bleed across unrelated projects | director + `de-direction` |
+| **Conversion-wins capture** | After handoff, each shipped accountable-WOW bet is appended to `memory/conversion-wins.md` (status `pending`), so the ledger actually accumulates | `de-handoff` |
+| **`--build` cost guard** | Before fan-out, shows an agent-count estimate and confirms scope | `de-handoff/reference/build-loop.md` |
+| **`--build` workspace isolation** | Creates a git worktree/branch before parallel build agents write code | `de-handoff/reference/build-loop.md` |
+| **`--build` render-for-shot** | Bridges built components → pixels (dev server / standalone HTML harness) so `shot` can verify React/Vue sections | `de-handoff/reference/build-loop.md` |
+
+Design decisions behind these are recorded in [`../../docs/adr/`](../../docs/adr/).

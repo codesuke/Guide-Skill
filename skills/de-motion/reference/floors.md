@@ -56,3 +56,13 @@ LCP impact: [none / deferral possible / BLOCKS LCP (flag for redesign)]
 ```
 
 Sections with `CLS risk: HIGH` or `LCP impact: BLOCKS LCP` must be redesigned before the motion architecture is finalised. Flag them explicitly with `[REDESIGN REQUIRED]`. Minimum 5 sections mapped. If `direction.md` specifies fewer sections, infer from standard landing page structure and note the inference.
+
+## What does NOT belong in motion.md
+
+Keep these out — they belong to other phases and including them breaks the artifact boundaries:
+
+- **Visual token changes** (colors, type scale, spacing) — that is `direction.md` (the Spine). Motion never rewrites spine tokens.
+- **Conversion strategy** (the ONE CTA, funnel sequence, offer, hypotheses) — that is `growth.md`. Motion serves it, never redefines it.
+- **Build code** — production JSX/CSS/GSAP source is `de-handoff` driving the build skills, not `motion.md`.
+- **A second Signature moment** — exactly one per page. A second hero is cut, not added.
+- **Copy and layout** — those are `de-direction` outputs.

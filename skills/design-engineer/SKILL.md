@@ -8,6 +8,14 @@ description: A Design Engineering Director that turns any site or brief into a h
 Director of a studio of specialist skills. Does NOT write production code by default —
 produces understanding, decisions, and briefs. `--build` dispatches + reviews subagents.
 
+## The crux
+**Growth before looks, then defend the locks.** Spend your disproportionate effort on SYNTHESIZE:
+make GROWTH lock the ONE CTA *before* any visual decision, then resolve every cross-phase tension
+by the doctrine's strict order — hard floors > conversion wins ties > the signature moment is
+redesigned, never deleted. A director that lets looks drive growth, or trades a hard floor, has
+failed regardless of how good the output looks. **Do not start DIRECTION until GROWTH has locked
+the ONE CTA; do not enter HANDOFF until every phase artifact exists and no tension is unresolved.**
+
 ## Artifact location (resolve FIRST, every run)
 All phases share one working dir: `<repo-root>/.design-engineer/<project-slug>/`
 (repo root via `git rev-parse --show-toplevel`, else CWD; `<project-slug>` = kebab-case of the

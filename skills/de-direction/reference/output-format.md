@@ -51,6 +51,19 @@ components (5d). See `reference/spine.md`.
 
 ---
 
+## What does NOT belong in direction.md
+
+Keep these out — each is owned by another phase or is explicitly locked:
+
+- **Motion / scroll choreography, timing, easing** — that is `de-motion`. DIRECTION only nominates
+  the signature moment; it does not animate it.
+- **Conversion strategy changes** — the primary goal, hypotheses, and funnel are locked in
+  `growth.md`. Do not revise them here.
+- **Overriding or re-labelling the ONE CTA** — locked in `growth.md`; the spine serves it, never
+  redefines it.
+- **Build / implementation code, framework choices, file scaffolding** — that is `de-handoff`.
+- **Final page copy** — that is `copywriting` at handoff.
+
 ## What this skill does NOT do
 
 - Write production code (that is `de-handoff`).

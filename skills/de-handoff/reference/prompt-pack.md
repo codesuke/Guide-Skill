@@ -114,3 +114,63 @@ After writing `prompt-pack.md`, emit a brief inline summary:
 - Signature moment section (name + technique)
 - Any sections that had a CLS or LCP flag requiring resolution before building
 - Reminder: pass `--build` to move from prompts to actual builds
+
+## Good / bad
+
+Judge every section prompt by one test: can a fresh build agent ship it correctly with no other file open?
+
+**BAD — a pointer, not a prompt:**
+
+```
+## Hero — Build Prompt
+Build the hero per direction.md and growth.md.
+```
+
+Why it fails: the build agent has none of the context. It cannot read `direction.md` / `growth.md` (they are not passed to it), so it invents tokens, copy, motion, and CTA — producing an off-spine, off-strategy section. There is no conversion bet, no perf/a11y gate, no acceptance criteria, so nothing can be gate-checked. This is the single most common way a prompt pack fails.
+
+**GOOD — fully self-contained (every value inline):**
+
+```
+## Hero — Build Prompt *(SIGNATURE MOMENT)*
+
+### Context
+You are building the Hero of Acme Analytics. Purpose: state the value prop and drive the ONE CTA above the fold.
+
+### Design tokens (non-negotiable — do not change)
+Colors: --bg #0B0B0F  --fg #F5F5F7  --accent #4F46E5  --muted #6B7280
+Type scale: H1 clamp(3rem,6vw,5.5rem)/600  body 1.125rem/400  small 0.875rem
+Spacing: base 8px; section padding 96px desktop / 48px mobile
+
+### Motion spec (from motion.md)
+Motion type: masked-reveal on H1. Intent: signature moment — the headline wipes in.
+Trigger: viewport entry. Reduced-motion fallback: H1 visible at full opacity, no wipe.
+CLS risk: none (transform + opacity only). LCP impact: defer until after H1 paints.
+Technology: GSAP ScrollTrigger.
+
+### Accountable WOW
+Decision: masked-reveal headline. Conversion bet: a crafted hero lifts scroll-past + CTA trust.
+Metric it moves: hero CTA click-through. Experiment: masked-reveal (B) vs static (A), ship if B ≥ A +5%.
+Instrumentation: fire hero_cta_click. Perf gate: LCP < 2.5s, no CLS from motion. A11y gate: reduced-motion = static H1.
+
+### Copy
+H1: "Ship analytics in an afternoon." Subhead: "Drop-in SDK, dashboards in minutes." CTA: "Start free".
+
+### Build instructions
+1. Implement at components/sections/Hero.tsx. 2. Use only the tokens above. 3. prefers-reduced-motion check matching the fallback. 4. Semantic HTML, focus-visible CTA.
+
+### Acceptance criteria
+- [ ] Tokens used exclusively  - [ ] masked-reveal + reduced-motion fallback working
+- [ ] LCP < 2.5s, CLS = 0  - [ ] contrast ≥ 4.5:1  - [ ] ONE CTA "Start free" visually dominant
+```
+
+Why it works: every token, the motion spec with its fallback, the accountable-WOW block, the real copy and CTA label, the component path, and checkable acceptance criteria are all inline. The build agent ships it correctly with nothing else open.
+
+## What does NOT belong in a build prompt / prompt-pack.md
+
+Adding any of these means a phase is being re-litigated downstream. Cut it.
+
+- **Re-deciding the direction or tokens** — the Spine is locked in `direction.md`; paste its values, never change or re-choose them.
+- **Changing the ONE CTA** — locked in `growth.md`; the prompt restates it, it does not pick a different primary action.
+- **A second signature moment** — exactly one per page (locked in `motion.md`); a prompt that introduces another violates the doctrine.
+- **Redesigning the motion architecture** — restate the per-section motion spec; do not re-author it.
+- **Actual code** — in default mode `prompt-pack.md` is prompts only; no `.tsx`/`.css`/component implementations. Code lives in `--build`.

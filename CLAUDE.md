@@ -15,6 +15,7 @@ skills/
     examples/        a real end-to-end run (railrecruit)
     scripts/         scan-skills.sh (auto-discovers installed skills)
   de-recon | de-growth | de-direction | de-motion | de-handoff   phase skills
+  de-components    craft skill — beautiful Tailwind component mocks (not a pipeline phase)
 docs/
   adr/               architecture decision records (one decision per file)
   superpowers/       validators + the gap-audit regression harness + smoke test

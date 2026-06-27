@@ -2,8 +2,8 @@
 
 A collection of agent skills that turn any site or brief into a high-converting, high-retention
 *WOW* site. A **director** skill orchestrates five **phase** skills in sequence; each emits one
-**artifact** the next consumes. The collection produces a plan by default and only writes code
-under `--build`.
+**artifact** the next consumes. A **craft** skill (`de-components`) makes beautiful component mocks
+on demand. The collection produces a plan by default and only writes code under `--build`.
 
 ## Language
 
@@ -48,6 +48,13 @@ WCAG contrast ≥ 4.5:1. Floors beat both conversion and aesthetics. _Avoid_: bu
 
 **Mode** — how HANDOFF runs: **default** emits a `prompt-pack.md` (no code); **`--build`** runs
 the self-correcting studio loop (writes code, screenshots, adversarial review).
+
+**Craft skill** — `de-components`. Not a pipeline phase; invoked standalone or by HANDOFF to make
+one beautiful, production-grade component. Inherits the **Spine** and writes a **mock**.
+
+**Mock** — an HTML + **Tailwind CSS** rendering of a component or section, built to polish fast and
+convert to a React component cleanly. Doctrine rule: *mocks are built in Tailwind* — no inline
+styles, ad-hoc CSS, or another framework. _Avoid_: prototype (reserve for runnable throwaways).
 
 ## Relationships
 

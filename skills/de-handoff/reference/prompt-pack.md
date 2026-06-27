@@ -69,12 +69,14 @@ Technology: [from motion-vs-tech matrix — GSAP ScrollTrigger / Framer Motion /
 
 ### Build instructions
 1. Implement at [component path, e.g. components/sections/Hero.tsx].
-2. Use only the tokens above — no hardcoded values.
+2. **Build with Tailwind CSS** — map the spine tokens to Tailwind theme/arbitrary values; no inline `style=`, no separate stylesheet, no other CSS framework (doctrine: "Mocks are built in Tailwind"). Use only the tokens above — no hardcoded values.
 3. The motion must have a prefers-reduced-motion check; the fallback must match the spec above.
 4. The component must be accessible: semantic HTML, ARIA where needed, focus management if scroll-hijacked.
-5. [Any section-specific instructions from the master brief]
+5. For component-level craft (a single beautiful card/button/form within the section), route to `de-components`.
+6. [Any section-specific instructions from the master brief]
 
 ### Acceptance criteria
+- [ ] Built with Tailwind (no inline styles / non-Tailwind CSS)
 - [ ] Design tokens used exclusively (no hardcoded colors, font sizes, or spacing)
 - [ ] Motion spec implemented; reduced-motion fallback working
 - [ ] Accountable WOW block's perf gate passed (LCP < 2.5s, CLS = 0)

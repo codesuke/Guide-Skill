@@ -20,7 +20,7 @@ It does NOT write production code by default — it produces understanding, deci
 - You already have recon.md and growth.md and want to run direction only
 - You are auditing or patching one phase of an existing plan
 
-### The 6 skills in the collection
+### The 7 skills in the collection
 
 | Skill | What it does | Output |
 |---|---|---|
@@ -30,7 +30,11 @@ It does NOT write production code by default — it produces understanding, deci
 | `de-direction` | 3-concept art-direction tournament + live reference board + design-system token spine | `direction.md` |
 | `de-motion` | Full motion architecture: per-section scroll plan, signature-moment scoring lab, motion-vs-tech matrix, a11y/perf floors | `motion.md` |
 | `de-handoff` | Synthesizes all artifacts into implementation-ready output | `prompt-pack.md` (default) or `studio-output.md` (`--build`) |
+| `de-components` | Craft skill — beautiful, production-grade component mocks in Tailwind, every state designed | `components/<name>.html` |
 
+> `de-components` is a **craft skill**, not a pipeline phase — invoke it standalone for one
+> beautiful component, or `de-handoff` routes component-level craft through it.
+>
 > `impeccable` and `emil-design-eng` are **external critic skills** the director routes to (primary
 > and micro-polish critics) — they are not part of this collection. If absent, the pipeline degrades
 > gracefully and audits against the same doctrine checklist manually.

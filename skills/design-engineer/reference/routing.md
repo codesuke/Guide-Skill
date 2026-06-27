@@ -9,3 +9,6 @@ This table is consumed by the orchestrator at the start of every run and auto-re
 | direction | high-end-visual-design, gpt-taste, brandkit, landing-page, theme-factory/shadcn/tailwindcss | firecrawl-deep-research/search |
 | motion | cinematic-gsap-lenis-motion-system, gsap-scrolltrigger/timeline/plugins, threejs/webgl-*/globe-*, masked-reveal, staggered-word-reveal, progressive-blur | live Awwwards refs via firecrawl |
 | handoff | frontend-design, senior-frontend; critic=impeccable (+emil-design-eng) | shot for visual verify |
+| components (craft) | de-components (owns it); shadcn, beautiful-shadows, tailwindcss, minimalist-ui; critic=impeccable (+emil-design-eng) | shot for visual verify |
+
+`de-components` is a craft skill, not a pipeline phase — invoked standalone for a single beautiful component, or by `de-handoff` for component-level craft. It inherits the Spine from `direction.md` and builds Tailwind mocks.

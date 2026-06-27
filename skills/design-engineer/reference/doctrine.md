@@ -21,6 +21,9 @@ These are not afterthoughts added at handoff. They are baked into `de-motion` fr
 **Reject the generic AI look.**
 The following are automatically disqualifying unless the brief explicitly demands them: centred card stack with drop shadows, purple-to-blue gradient hero, emoji bullets in feature lists, glowing CTA button with blur halo, stock-illustration mascots. When any of these appears in a proposal, it is flagged and replaced before direction is finalised. Primary critic: `impeccable`.
 
+**Mocks are built in Tailwind.**
+Every component or section mock is built with Tailwind CSS utility classes — not inline `style=`, ad-hoc stylesheets, or another CSS framework. Tailwind mocks polish fast and convert to React components cleanly (class strings lift straight into the component, state variants carry over unchanged). `de-components` produces these mocks; `de-handoff` prompts specify Tailwind. The mock's tokens come from the locked Spine, never a parallel palette.
+
 ---
 
 ## Growth half

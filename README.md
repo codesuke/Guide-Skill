@@ -42,8 +42,11 @@ lives. **Re-run it any time you move or re-clone the folder** — the symlinks r
 | [`de-direction`](skills/de-direction/SKILL.md) | 3-concept art-direction tournament + design-system spine | `direction.md` |
 | [`de-motion`](skills/de-motion/SKILL.md) | Motion architecture + one scored signature moment + a11y/perf floors | `motion.md` |
 | [`de-handoff`](skills/de-handoff/SKILL.md) | Build prompts (default) or `--build` studio loop | `prompt-pack.md` / `studio-output.md` |
+| [`de-components`](skills/de-components/SKILL.md) | Craft skill — beautiful, production-grade component mocks in Tailwind, with every state | `components/<name>.html` |
 
 All artifacts land in one working dir: `<repo-root>/.design-engineer/<project-slug>/`.
+`de-components` is a craft skill (not a pipeline phase) — invoke it standalone for one beautiful
+component, or `de-handoff` routes component-level craft through it.
 
 ## Usage
 
